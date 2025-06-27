@@ -1,33 +1,58 @@
 class AnnualLeave {    
-    constructor(totalHoursLate, totalOvertime, hours) {        
-        hours = {
+    constructor() {
+        this.buildedHoursBank();      
+    }
+
+    buildedHoursBank() {
+        const hours = {
             totalHoursLate: this.hoursLate(),       
             totalOvertime: this.overtime(),
-            totalHours: totalOvertime - totalHoursLate,
+            totalHours: Number,
+            status: false,
+        };
+        
+        if (hours.totalHoursLate <= hours.totalOvertime) {
+            hours.totalHours = hours.totalOvertime - hours.totalHoursLate;
+            hours.status = true;
+        } else {
+            hours.totalHours = hours.totalHoursLate - hours.totalOvertime;
+            hours.status = false;
         };
 
-        console.log("Horas: ", hours);        
+        console.log("Banco de Horas: ", hours);
+    }
+
+    getTotalHoursLateUser() {
+        return 5;
     }
 
     hoursLate() {
         return 5;
     }
 
+    getTotalOvertimeUser() {
+        return 25;
+    }
+
     overtime() {
-        return 3;
+        return 25;
     }
 
     setMaker() {
         try {
-            const dataExemplo = new Date();
+            const date = new Date();
             
             const point = {
-                hourMarked: dataExemplo.getHours(),
-                minutesMarked: dataExemplo.getMinutes(),
+                day: date.getDate(),
+                month: date.getMonth() + 1,
+                year: date.getFullYear().toString(),
+                hour: date.getHours(),
+                minutes: date.getMinutes(),
             };
 
-            console.log("hora e minuto marcado: ", point);            
-            return true;
+            point.completeDate = `${point.day.toString().padStart(2, '0')}/${point.month.toString().padStart(2, '0')}/${point.year.toString()}`;
+        
+            return point;
 
         } catch (error) {
             throw new Error('Não foi possíve realizar marcação!');
