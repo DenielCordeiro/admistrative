@@ -5,8 +5,8 @@ class AnnualLeave {
 
     buildedHoursBank() {
         const hours = {
-            totalHoursLate: this.hoursLate(),       
-            totalOvertime: this.overtime(),
+            totalHoursLate: this.getTotalHoursLateUser(),       
+            totalOvertime: this.getTotalOvertimeUser(),
             totalHours: Number,
             status: false,
         };
@@ -26,15 +26,7 @@ class AnnualLeave {
         return 5;
     }
 
-    hoursLate() {
-        return 5;
-    }
-
     getTotalOvertimeUser() {
-        return 25;
-    }
-
-    overtime() {
         return 25;
     }
 
@@ -60,8 +52,8 @@ class AnnualLeave {
     }
 }
 
-const annualLeaveClass = new AnnualLeave();
+const AppAnnualLeave = new AnnualLeave();
 
 document.getElementById('marker-button')?.addEventListener('click', () => {
-    annualLeaveClass.setMaker();
+    AppAnnualLeave.setMaker();
 });

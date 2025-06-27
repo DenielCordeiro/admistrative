@@ -3,41 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/annual-leave.css">
+    <link rel="stylesheet" href="./annual-leave.css">
     <title>Banco de Horas</title>
 </head>
 <body>
     <section id="header">
         <div class="top-menu">
-            <div class="collaborators">
+            <a class="collaborators" href="../collaborators/collaborators.html">
                 <span>Colaboradores</span>
-            </div>
-            <div class="my-account">
+            </a>
+            <a class="my-account">
                 <span>Minha Conta</span>
-            </div>
+            </a>
         </div>
     </section>
 
-    <section id="content-for-markup">
-        <div class="content">
+    <section id="management-contents-hours">
+        <div class="content-for-markup">
+            <button id="marker-button" class="marker-button">( MARCAR )</button>
+        </div>
+
+        <div class="content-hours">
             <div class="hours-late">
                 <span>Horas em Atraso:</span>
             </div>
 
-            <div class="marker">
-                <button id="marker-button" class="marker-button">( MARCAR )</button>
+            <div class="hours-total">
+                <span>Total de Horas:</span>
             </div>
 
             <div class="overtime">
                 <span>Horas Extras:</span>
             </div>
-        </div>
-
-        <div class="hours-total">
-            <span>Total de Horas:</span>
-        </div>
+        </div>       
     </section>
     
-    <script src="../js/annual-leave.js"></script>
+    <script src="./annual-leave.js"></script>
 </body>
 </html>

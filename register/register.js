@@ -52,9 +52,9 @@ class RegisterUser {
     }
 }
 
-const AppLogin = new RegisterUser();
+const AppRegisterUser = new RegisterUser();
 
 document.getElementById('login-button')?.addEventListener('click', (event) => {
     event.preventDefault(); // evita o envio do formulário
-    AppLogin.registering();
+    AppRegisterUser.registering();
 });
