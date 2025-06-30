@@ -19,7 +19,17 @@ class AnnualLeave {
             hours.status = false;
         };
 
-        console.log("Banco de Horas: ", hours);
+        const hoursLate = document.getElementById('hours-late');
+        const hoursTotal = document.getElementById('hours-total');
+        const overtime = document.getElementById('overtime');
+
+        if(hoursLate && overtime) {
+            hoursLate.innerText = hours.totalHoursLate;
+            hoursTotal.innerText = hours.totalHours;
+            overtime.innerText = hours.totalOvertime;
+        } else {
+            throw new Error("Não foi possível exxibir horas em atraso e horas extras!");
+        }
     }
 
     getTotalHoursLateUser() {

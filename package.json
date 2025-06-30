@@ -2,10 +2,19 @@
   "name": "administrative",
   "version": "1.0.0",
   "description": "Company Manangmente Administrative",
-  "main": "main.js",
-  "scripts": {
-    "start": "node main.js"
+  "homepage": "https://github.com/DenielCordeiro/admistrative#readme",
+  "bugs": {
+    "url": "https://github.com/DenielCordeiro/admistrative/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenielCordeiro/admistrative.git"
+  },
+  "license": "MIT",
   "author": "Daniel de Souza Cordeiro",
-  "license": "MIT"
+  "type": "module",
+  "main": "login/login.html",
+  "scripts": {
+    "start": "http-server -o ./login/login.html"
+  }
 }
