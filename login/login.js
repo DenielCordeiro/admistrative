@@ -1,6 +1,12 @@
+import UserService from '../services/user-service.js';
+
 class Login {
     constructor() {
         this.verifyIsLogin();
+
+        this.userService = new UserService();
+
+        this.userService.login('test');
     }
 
     verifyIsLogin() {
@@ -14,12 +20,9 @@ class Login {
 
     login() {
         try {
-            // Aqui eu salvo o objeto que criei salvando email e senha do usuário.
             const credentialsUser = this.getCredentials();
 
             console.log('login is on', credentialsUser);
-
-            
 
             return true;
         } catch (error) {
